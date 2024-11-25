@@ -58,4 +58,39 @@ Df.shape
 as earlier used to check the number of rows and columns.
 So the result of our examination of the table shows that all the columns are categorical column except: **SNRCITIZEN, TENURE, MONTHLYCHARGES, TOTALCHARGES**. That means we shall perform one-hot coding for all of them since they are numerical columns safe for the snrcitizen column since it is binary in nature.
 
+I also noticed that most categorical columns have **4** or less unique values. E.g, in the “churn” column, we have just the “yes” and “no”.
+
+We went on to check the size of the data using the 
+```
+Df.size
+```
+code. which simply multiplied the number of rows by number of column to get **147903**
+```
+Df.types
+```
+to check the data type
+
+<img width="214" alt="DATA TYPE" src="https://github.com/user-attachments/assets/866eacd5-0b0b-4cdb-b8f0-6222a01798a9">
+
+Note that **totalchages** came as object instead of float. So we shall fix it.
+
+So to check again the columns of the dataset, we used ```df.columns``` as can be seen here
+
+<img width="437" alt="DF COLUMNS" src="https://github.com/user-attachments/assets/0b5abde1-a6b3-442b-aee3-73ebd8305a08">
+
+then ```df.info``` to get the information about each column 
+
+<img width="314" alt="DF INFO MAIN" src="https://github.com/user-attachments/assets/766d895f-30ba-45ff-b4fa-2cdf1ca157c2">
+
+From the image, we can see that there are no null values (no-null) however, we can confirm this with ```df.isnull().sum()``` code
+
+<img width="152" alt="null value" src="https://github.com/user-attachments/assets/5911673c-57f3-47aa-9900-f2aea729858b">
+
+So from the image above, we can see that all indicate 0 null values.
+
+I also checked to see if there are duplicate values and saw that there are no duplicate values for the dataframe.
+So having identified some isuues in our dataset, we can move on to cleaning our data.
+ 
+
+
 
