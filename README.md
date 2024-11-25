@@ -116,5 +116,32 @@ Now to consider the distribution of numerical features in relation to the target
 
 For easy understanding, blue color is “not churn”, while red color is “churn”
 
-<img width="883" alt="numerical feature in relation to churn" src="https://github.com/user-attachments/assets/b33df0d1-d861-449c-91ec-5b5a26bfbf4c">
+What the image above tries to tell us is that:
 
+
+1) For the Tenure (How long customers stayed) visual we can see that: 
+
+<img width="290" alt="Tenure numerical Feature" src="https://github.com/user-attachments/assets/5b60ad37-04a5-44de-b03d-11db8f36db80">
+
+- Blue bars dominate at higher values (e.g., closer to 60-72 months). This means customers who have been with the company for a long time are more likely to stay.
+- Red bars are higher at lower values (closer to 0-10 months). This shows that people who recently joined are more likely to leave.
+
+In all of this, it means that customers are more likely to churn (leave) early in their tenure. Long-term customers tend to stay loyal.
+
+
+2) For the MonthlyCharges (How much customers pay per month) visual:
+
+<img width="297" alt="Monthly Feature numerical" src="https://github.com/user-attachments/assets/e59b884d-622c-4e0f-970b-6ebccf3a5223">
+
+- The red bars are higher for larger MonthlyCharges (around $70-$120). This means customers who pay more each month are more likely to leave.
+- The blue bars are spread across all charges, but they’re more concentrated in the middle range (around $30-$80).
+This means that high monthly bills might be a reason why customers leave. Offering discounts or lower plans could help keep them.
+
+
+3) In the TotalCharges (How much customers have paid overall) visual:
+   
+<img width="272" alt="totalcharges numerical feature" src="https://github.com/user-attachments/assets/dea12928-04a3-4d73-82ba-800f2f10e875">
+
+- Blue bars are much higher for larger values (above $2000). This shows that customers who have paid more overall (likely those with long tenures) are more likely to stay.
+- Red bars are higher for smaller values (closer to $0-$1000). This matches the tenure observation: newer customers (who haven’t paid much yet) are more likely to leave.
+What this tells us is that customers who haven’t been with the company long or haven’t invested much money are more likely to churn.
