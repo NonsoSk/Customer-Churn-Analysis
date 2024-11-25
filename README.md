@@ -43,31 +43,12 @@ What this means is that, there are **7043** rows of data and **21** columns.
 
 # Exploratory Data Analysis.
 
-To take a brief look at our data, we used 
-```
-Df.head
-```
-to view the first **5** top rows and then
-```
-Df.tail
-```
-to get the last **5** rows
-```
-Df.shape
-```
-as earlier used to check the number of rows and columns.
+To take a brief look at our data, we used ```Df.head``` to view the first **5** top rows and then ```Df.tail``` to get the last **5** rows ```Df.shape``` as earlier used to check the number of rows and columns.
 So the result of our examination of the table shows that all the columns are categorical column except: **SNRCITIZEN, TENURE, MONTHLYCHARGES, TOTALCHARGES**. That means we shall perform one-hot coding for all of them since they are numerical columns safe for the snrcitizen column since it is binary in nature.
 
 I also noticed that most categorical columns have **4** or less unique values. E.g, in the “churn” column, we have just the “yes” and “no”.
 
-We went on to check the size of the data using the 
-```
-Df.size
-```
-code. which simply multiplied the number of rows by number of column to get **147903**
-```
-Df.types
-```
+We went on to check the size of the data using the ```Df.size``` code. which simply multiplied the number of rows by number of column to get **147903** ```Df.types```
 to check the data type
 
 <img width="214" alt="DATA TYPE" src="https://github.com/user-attachments/assets/866eacd5-0b0b-4cdb-b8f0-6222a01798a9">
@@ -128,3 +109,12 @@ From the image, we can understand the following:
   - 25% of customers have been with the company for 9 months or less.
   - Half (50%) of the customers have been with the company for 29 months or less.
   - 75% of customers have stayed for 55 months or less.
+
+
+Now to consider the distribution of numerical features in relation to the target variable
+<img width="883" alt="numerical feature in relation to churn" src="https://github.com/user-attachments/assets/3b0473ad-730b-48b7-8edd-773c52053dcc">
+
+For easy understanding, blue color is “not churn”, while red color is “churn”
+
+<img width="883" alt="numerical feature in relation to churn" src="https://github.com/user-attachments/assets/b33df0d1-d861-449c-91ec-5b5a26bfbf4c">
+
