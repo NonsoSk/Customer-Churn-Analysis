@@ -91,6 +91,40 @@ So from the image above, we can see that all indicate 0 null values.
 I also checked to see if there are duplicate values and saw that there are no duplicate values for the dataframe.
 So having identified some isuues in our dataset, we can move on to cleaning our data.
  
+# BASIC DATA CLEANING
+As observed, the totalcharges was object datatype, so we changed to float. Moving further, I tried to find the correlation between the numerical features. 
 
+<img width="379" alt="numerical correlation" src="https://github.com/user-attachments/assets/c214e975-1fe4-4f4e-8ff2-0470f8ac8be0">
 
+# FEATURE DISTRIBUTION
 
+To check  for outliers and compare feature distributions with target variable, we went on to plot distributions for numerical and categorical features.
+Numerical Features distribution.
+
+To get the summary statistics of the three numerical features (**tenure, MonthlyCharges, and TotalCharges**) in the dataset, we used the code : ```df[numerical_features].describe()```
+So the distribution of the numerical features can be seen in the image below:
+
+<img width="295" alt="Numerical Feature distribution" src="https://github.com/user-attachments/assets/4b5502bf-f84a-4102-9dbf-6c5d5bc35de6">
+
+From the image, we can understand the following:
+- Count: Here we try to see how many customers have data in this column.
+  - Tenure and MonthlyCharges have data for 7,043 customers.
+  - TotalCharges has data for 7,032 customers — so 11 customers are missing this information.
+    
+- mean (average):
+  - On average, customers stay for about 32 months (tenure), pay $64.76 per month (MonthlyCharges), and have paid a total of $2,283.30 so far (TotalCharges).
+    
+- Std (standard deviation): This tells us how spread out the data is.
+  - For tenure, we can say on average, customers’ tenure varies by about 24.55 months from the mean of 32 months. That means most customers are likely to have stayed for 32 ± 24.55 months.
+  - MonthlyCharges varies by $30. Some people pay much less, and some pay much more than the average.
+  - For Totalcharges, it means that the total amount customers have paid varies by about $2,266.77 from the average of $2,283.30. This means that most customers have likely paid between $16.53 and $4,550.07
+
+- Min (minimum) and max (maximum):
+  - The shortest time a customer has stayed is 0 months, and the longest is 72 months.
+  - The lowest monthly charge is $18.25, and the highest is $118.75.
+  - The smallest total charge paid is $18.80, and the largest is $8,684.80.
+    
+- 25%, 50% (median), 75%: These tell you how the data is divided into parts:
+  - 25% of customers have been with the company for 9 months or less.
+  - Half (50%) of the customers have been with the company for 29 months or less.
+  - 75% of customers have stayed for 55 months or less.
