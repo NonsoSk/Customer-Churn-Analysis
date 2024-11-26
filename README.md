@@ -78,12 +78,12 @@ So from the image above, we can see that all indicate 0 null values.
 I also checked to see if there are duplicate values and saw that there are no duplicate values for the dataframe.
 So having identified some isuues in our dataset, we can move on to cleaning our data.
  
-# BASIC DATA CLEANING
+# Basic data cleaning
 As observed, the totalcharges was object datatype, so we changed to float. Moving further, I tried to find the correlation between the numerical features. 
 
 <img width="379" alt="numerical correlation" src="https://github.com/user-attachments/assets/c214e975-1fe4-4f4e-8ff2-0470f8ac8be0">
 
-# FEATURE DISTRIBUTION
+# Feature Distribution
 
 To check  for outliers and compare feature distributions with target variable, we went on to plot distributions for numerical and categorical features.
 
@@ -119,6 +119,7 @@ From the image, we can understand the following:
 
 
 Now to consider the distribution of numerical features in relation to the target variable
+
 <img width="883" alt="numerical feature in relation to churn" src="https://github.com/user-attachments/assets/3b0473ad-730b-48b7-8edd-773c52053dcc">
 
 For easy understanding, blue color is “not churn”, while red color is “churn”
@@ -163,17 +164,24 @@ The charts here helps us visualize and understand customer demographics. By look
 
 We shall explain every categorical feature 
 1) Gender
+   
 The chart for gender shows:
 Almost equal numbers of males and females in the data.
 This means gender is balanced, so it probably won't strongly affect whether a customer leaves or stays.
+
 2) SeniorCitizen
+   
 This chart shows:
 Most customers are not senior citizens (0).
 A smaller number of customers are senior citizens (1).
+
 3) Partner
+   
 This chart shows:
 About the same number of customers with a partner (Yes) and without a partner (No).
+
 4) Dependents
+
 This chart shows:
 Many customers do not have dependents as the bar for No is much higher.
 Fewer customers have dependents (Yes).
@@ -181,30 +189,44 @@ Fewer customers have dependents (Yes).
  <img width="844" alt="second" src="https://github.com/user-attachments/assets/4fd84d95-08a8-4d0f-af50-1bfce1041a93">
 
 5) PhoneService
+
 This chart shows:
 Almost everyone has phone service, while a small group doesn’t.
+
 6) MultipleLines
+
 This chart shows:
 Most people either have one phone line or multiple, and some don’t use phone service.
+
 7) InternetService
+
 This chart shows the type of internet people use:
 "Fiber optic" is the most common, followed by DSL, and then people without internet.
+
 8) OnlineSecurity
+
 This chart shows:
 Many people don’t have online security, while others do, and some don’t have internet service at all.
 
 <img width="854" alt="Third" src="https://github.com/user-attachments/assets/e732a14c-2998-4963-a823-aff0c81b03ac">
 
 9) OnlineBackup
+
 This chart shows:
 Many people don’t use online backup, while others do.
+
 10) DeviceProtection
+
 This chart shows:
 Similar to OnlineBackup—many don’t have device protection.
+
 11) TechSupport
+
 This chart shows:
 A lot of people don’t use tech support services.
+
 12) StreamingTV
+
 This chart shows:
 Most people either have it or don't, while a smaller group doesn't have internet at all.
 
@@ -212,21 +234,30 @@ Most people either have it or don't, while a smaller group doesn't have internet
 
 
 13) StreamingMovies
+
 This chart shows how many people have movie streaming services:
 Most people either have it or don't, while a smaller group doesn't have internet at all.
+
 14) Contract
+
 Shows the type of contracts people have:
 A lot of people are on "Month-to-month" contracts, while fewer have yearly contracts.
+
 15) PaperlessBilling
+
 Shows whether people use online billing:
 More people use paperless billing than those who don’t.
+
 16) PaymentMethod
+
 Shows the payment methods:
 Electronic checks are the most common, while other methods like mailed checks and automatic payments are less frequent.
 
 
 Next, we examined categorical features in relation to target variable, 
+
 <img width="803" alt="Categorical distribution in relation to churn" src="https://github.com/user-attachments/assets/609508ca-b2d4-47dc-a420-b171ee73fb5c">
+
 However, we did this only for contract feature. 
 1. Left Plot (Not Churned):
  - Most customers who didn’t churn have Month-to-Month contracts.
@@ -252,16 +283,17 @@ Few things we can do to minimize the influence of imbalanced dataset:
 To minimize the influence of imbalance dataset, we go for the last option since we could not collect more samples.
 Went further to check and remove outliers and the result showed that there are no outliers.
 
-# DATA CLEANING AND TRANSFORMATION
+# Data Cleaning and Transformation
 We dropped the “customer id” since it was not going to help us in our prediction and then moved on to perform one-hot encoding on our c categorical features which evidently expanded the number of our columns from 21 to 31 
 We went over to feature scaling so as to prepare the data by splitting it into training and testing sets.
 
-# MODEL TRAINING
+# Model Training
 
 ## Prediction using Logical Regression
 Imported the logistic regression from the sklearn.linear model
 
 Moving further, we ran the logistic regression model prediction
+
 <img width="392" alt="Logical Regression analysis" src="https://github.com/user-attachments/assets/29b2e165-50ad-40e3-82e3-faecc39ede28">
 
 
@@ -296,6 +328,7 @@ We can move on to visualize this
 
 Moving on, we used the confusion matrix to predict the model. It tells us
 ACTUAL VS PREDICTED as can be seen below:
+
 <img width="512" alt="Logical actual" src="https://github.com/user-attachments/assets/6bf77237-ddeb-4dbb-bd3c-a4bd26d6499e">
 
 
@@ -303,17 +336,20 @@ from the image, 1397 customers who are not churning and have been predicted as n
 
 Comparing the trained dataset with the test dataset, we can notice that the different is just slight and so can be recommended.
 for better understanding, see the image below:
+
 <img width="218" alt="Regression test" src="https://github.com/user-attachments/assets/97e7664f-acbc-4d7a-bce0-3ba47fd8b530">
 
 ## Support Vector Classifier
 
 we can understand the confusion metrix clearly  through the visual
+
 <img width="411" alt="Vector actual vs predicted" src="https://github.com/user-attachments/assets/0ab562c9-4474-4389-99ad-b001adc517f6">
 
 We can see that 1427 customers who are not churning and have been predicted as not churning also, then there are 130 who are not churned but predicted as churned. 292 are actually churned and have been predicted as not churned, then 264 are churned and have been predicted as churned.
 
 
 So moving further, we  can see that the trained dataset has more score than the test dataset as can be seen below:
+
 <img width="239" alt="Vector Train" src="https://github.com/user-attachments/assets/dc1eccbe-24d0-4b71-a4f9-056d14df6125">
 
 
@@ -326,13 +362,15 @@ After training and testing the model, we can understand better with the visual
 The visual shows that 1267 customers who are not churning and have been predicted as not churning also, then there are 290 who are not churned but predicted as churned. 284 customers who are actually churned and have been predicted as not churned, then 272 are churned and have been predicted as churned.
 
 So we can check the score of the test and train data 
+
 <img width="232" alt="tree test" src="https://github.com/user-attachments/assets/b30c1010-adcb-4b0b-95ec-bdd545503861">
 
 Notice that the difference is much and so, I would not recoomend using the DECISION TREE CLASSIFIER.
 
 
-## KNN CLASSIFIER
+## KNN Classifier
 After training and testing the model. I checked for the error rate, then moved on to run the confusion matrix
+
 <img width="520" alt="KNN Graph" src="https://github.com/user-attachments/assets/7a0f6171-fa2a-479d-bdde-a8e3d87f22e4">
 
 Here are the takes from the visual:
@@ -343,6 +381,7 @@ Here are the takes from the visual:
 306 are churned and have been predicted as churned.
 
 We checked the score:
+
 <img width="199" alt="KNN Test" src="https://github.com/user-attachments/assets/de12e503-798c-4c69-baad-f55d853e783e">
 
 Since its close, it can work.
